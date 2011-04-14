@@ -6,7 +6,7 @@ if ActionController::Routing.name =~ /ActionDispatch/
   
     def devise_cas_authenticatable(mapping, controllers)
       # service endpoint for CAS server
-      get "/", :to => "#{controllers[:cas_sessions]}#service", :as => ""
+      get "/cas_service", :to => "#{controllers[:cas_sessions]}#service"
       
       resource :session, :only => [], :controller => controllers[:cas_sessions], :path => "" do
         get :new, :path => mapping.path_names[:sign_in], :to => "#{controllers[:cas_sessions]}#create", :as => "new"

@@ -45,7 +45,7 @@ module Devise
         else
           mapping.raw_path
         end
-        u.to_s
+        u.to_s+'/cas_service'
       end
   
       def read_ticket(params)
